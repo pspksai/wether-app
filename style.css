@@ -1,141 +1,80 @@
+/* Reset default browser styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: Arial, sans-serif;
 }
 
+/* Center the weather app */
 body {
-    
-    margin: 0;
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-
     overflow: hidden;
-    font-family: 'Segoe UI', sans-serif;
 }
 
-
+/* Background image (Mist) */
 #weather-bg {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -2;
+    z-index: -1;
 
     background-image: url("https://images.unsplash.com/photo-1485230895905-ec40ba36b9bc");
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-}
-#weather-bg::after {
-    content: "";
-    position: center;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.35);
 }
 
-
-
-
-/* Glass UI */
+/* Weather app box */
 .app {
-    width: 350px;
-    padding: 25px;
-    border-radius: 20px;
+    width: 320px;
+    padding: 20px;
+    border-radius: 15px;
 
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(12px);   /* ✅ blur ONLY card */
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
 
-    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
     text-align: center;
 }
 
-
+/* Search section */
 .search {
-    margin: 20px 0;
+    margin: 15px 0;
 }
 
 .search input {
-    width: 70%;
+    width: 100%;
     padding: 10px;
-    border-radius: 10px;
-    border: none;
-    outline: none;
+    margin-bottom: 10px;
+
+    border-radius: 8px;
+    border: 1px solid #ccc;
 }
 
+/* Button */
 .search button {
-    padding: 10px 15px;
-    border-radius: 10px;
+    width: 100%;
+    padding: 10px;
+
+    border-radius: 8px;
     border: none;
-    cursor: pointer;
-    background: #ff9800;
+    background-color: orange;
     color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
+/* Weather text */
 .weather-info h2 {
-    font-size: 28px;
+    margin-top: 10px;
+    font-size: 24px;
 }
 
 .weather-info p {
-    font-size: 20px;
-    margin-top: 10px;
+    margin-top: 5px;
+    font-size: 18px;
 }
-
-/* 🌧️ Rain */
-.rain {
-    background: linear-gradient(#2c3e50, #000);
-}
-
-.rain::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 200%;
-    background: repeating-linear-gradient(
-        transparent,
-        transparent 5px,
-        rgba(255,255,255,0.2) 6px
-    );
-    animation: rain 0.3s linear infinite;
-}
-
-@keyframes rain {
-    from { transform: translateY(0); }
-    to { transform: translateY(50px); }
-}
-
-/* ☀️ Sunny */
-.sunny {
-    background: linear-gradient(180deg, #ff9800, #ffeb3b);
-    animation: sunrise 4s infinite alternate;
-}
-
-@keyframes sunrise {
-    from { filter: brightness(90%); }
-    to { filter: brightness(120%); }
-}
-
-/* ❄️ Snow */
-.snow {
-    background: linear-gradient(#4b79a1, #283e51);
-}
-
-.snow::before {
-    content: "❄ ❄ ❄ ❄ ❄ ❄ ❄ ❄";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    font-size: 30px;
-    animation: snow 6s linear infinite;
-}
-
-@keyframes snow {
-    from { transform: translateY(-100px); }
-    to { transform: translateY(100vh); }
-}
-
