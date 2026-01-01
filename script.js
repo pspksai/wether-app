@@ -32,7 +32,7 @@ function changeBackground(condition) {
 
     if (condition === "Mist" || condition === "Fog" || condition === "Haze") {
         bg.style.backgroundImage =
-          "url(https://static.wikia.nocookie.net/weather/images/f/fc/Fog.jpeg/revision/latest?cb=20120804193216)";
+          "url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTohPP6SbRm75crKw_Y5YwTSkd_2LSIABpIbg&s')";
     }
     else if (condition === "Rain" || condition === "Drizzle") {
         bg.style.backgroundImage =
@@ -40,10 +40,11 @@ function changeBackground(condition) {
     }
     else if (condition === "Snow") {
         bg.style.backgroundImage =
-          "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29')";
+          "url('https://www.jasonhummelphotography.com/wp-content/uploads/2021/03/Untitled_Panorama-5-copy.jpg')";
     }
     else {
         bg.style.backgroundImage =
           "url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29')";
     }
 }
+
